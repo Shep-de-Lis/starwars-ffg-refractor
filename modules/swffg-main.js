@@ -5,6 +5,7 @@
  */
 
 // Import Modules
+import { GameModeConfig } from "./apps/game-mode-config.js";
 import { FFG } from "./swffg-config.js";
 import { ActorFFG } from "./actors/actor-ffg.js";
 import { TokenFFG } from "./tokens/token-ffg.js";
@@ -1161,6 +1162,23 @@ Hooks.once("ready", async () => {
     });
     d.render(true);
   }
+
+
+  // ✅ JOUW CODE hier onder
+Hooks.on("renderSettingsConfig", (app, html) => {
+  const button = $(`
+    <button>
+      <i class="fas fa-cog"></i> Configure Game Mode
+    </button>
+  `);
+
+  button.click(() => new GameModeConfig().render(true));
+  html.find(".settings-submenu").prepend(button);
+});
+
+
+
+
 
   if ((isAlpha || isCurrentVersionNullOrBlank(currentVersion) || parseFloat(currentVersion) < parseFloat(game.system.version)) && game.user.isGM) {
     CONFIG.logger.log(`Migrating to from ${currentVersion} to ${game.system.version}`);

@@ -1,0 +1,11 @@
+<form>
+  <div class="form-group">
+    <label>Game Mode</label>
+    <select name="mode">
+      <option value="starwars" {{#if (eq mode "starwars")}}selected{{/if}}>Star Wars</option>
+      <option value="genesys" {{#if (eq mode "genesys")}}selected{{/if}}>Genesys Generic</option>
+    </select>
+  </div>
+
+  <button type="submit">Save</button>
+</form>
