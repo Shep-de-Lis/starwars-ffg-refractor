@@ -11,10 +11,10 @@ Hooks.once("ready", () => {
         setback: CONFIG.FFG.SETBACK_ICON,
         removeSetback: CONFIG.FFG.REMOVESETBACK_ICON,
         force: CONFIG.FFG.FORCE_ICON
-      }
+      },
+      results: {
+        ability: CONFIG.FFG.ABILITY_RESULTS,
+  }
     };
-
-    console.log("STYLE LOADED:", CONFIG.STYLE);
   }
 });
-
