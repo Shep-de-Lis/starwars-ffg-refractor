@@ -1118,6 +1118,21 @@ function isCurrentVersionNullOrBlank(currentVersion) {
   return currentVersion === "null" || currentVersion === '' || currentVersion === null;
 }
 
+Hooks.once("init", () => {
+  game.settings.register("starwarsffg", "gameMode", {
+    name: "⚙️ Game Mode",
+    hint: "Choose game style (reload required)",
+    scope: "world",
+    config: true,
+    type: String,
+    choices: {
+      starwars: "Star Wars",
+      genesys: "Genesys Generic"
+    },
+    default: "starwars"
+  });
+});
+
 // Handle migration duties
 Hooks.once("ready", async () => {
   SettingsHelpers.readyLevelSetting();

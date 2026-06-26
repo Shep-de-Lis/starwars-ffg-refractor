@@ -1,7 +1,7 @@
 {
-  "id": "starwarsffg",
-  "title": "Star Wars FFG",
-  "description": "A system for playing Star Wars FFG games.",
+  "id": "Genesys-Engine",
+  "title": "Genesys Engine (Multi-System)",
+  "description": "A system for playing Genesys games.",
   "version": "2.0.3",
   "compatibility": {
     "minimum": 13,
