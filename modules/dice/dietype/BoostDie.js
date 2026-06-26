@@ -58,7 +58,10 @@ export class BoostDie extends foundry.dice.terms.DiceTerm {
   /* -------------------------------------------- */
   /** @override */
   getResultLabel(result) {
-    const die = CONFIG.FFG.BOOST_RESULTS[result.result];
+    
+    const die =
+      CONFIG.STYLE?.results?.boost?.[result.result]
+      ?? CONFIG.FFG.BOOST_RESULTS[result.result];
     return `<img src='${die.image}' title='${game.i18n.localize(die.label)}' alt=''/>`;
   }
 }
