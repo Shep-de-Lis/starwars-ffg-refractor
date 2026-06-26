@@ -58,7 +58,9 @@ export class ForceDie extends foundry.dice.terms.DiceTerm {
   /* -------------------------------------------- */
   /** @override */
   getResultLabel(result) {
-    const die = CONFIG.FFG.FORCE_RESULTS[result.result];
+    const die = 
+      CONFIG.STYLE?.results?.force?.[result.result]
+      ?? CONFIG.FFG.FORCE_RESULTS[result.result];
     return `<img src='${die.image}' title='${game.i18n.localize(die.label)}' alt=''/>`;
   }
 }

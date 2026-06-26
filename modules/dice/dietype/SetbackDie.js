@@ -58,7 +58,9 @@ export class SetbackDie extends foundry.dice.terms.DiceTerm {
   /* -------------------------------------------- */
   /** @override */
   getResultLabel(result) {
-    const die = CONFIG.FFG.SETBACK_RESULTS[result.result];
+    const die = 
+      CONFIG.STYLE?.results?.setback?.[result.result]
+      ?? CONFIG.FFG.SETBACK_RESULTS[result.result];
     return `<img src='${die.image}' title='${game.i18n.localize(die.label)}' alt=''/>`;
   }
 }

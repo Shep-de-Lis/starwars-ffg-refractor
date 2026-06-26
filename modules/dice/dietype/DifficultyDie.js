@@ -58,7 +58,9 @@ export class DifficultyDie extends foundry.dice.terms.DiceTerm {
   /* -------------------------------------------- */
   /** @override */
   getResultLabel(result) {
-    const die = CONFIG.FFG.DIFFICULTY_RESULTS[result.result];
+    const die = 
+      CONFIG.STYLE?.results?.difficulty?.[result.result]
+      ?? CONFIG.FFG.DIFFICULTY_RESULTS[result.result];
     return `<img src='${die.image}' title='${game.i18n.localize(die.label)}' alt=''/>`;
   }
 }

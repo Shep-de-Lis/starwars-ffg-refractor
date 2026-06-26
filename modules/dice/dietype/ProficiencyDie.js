@@ -58,7 +58,9 @@ export class ProficiencyDie extends foundry.dice.terms.DiceTerm {
   /* -------------------------------------------- */
   /** @override */
   getResultLabel(result) {
-    const die = CONFIG.FFG.PROFICIENCY_RESULTS[result.result];
+    const die = 
+      CONFIG.STYLE?.results?.proficiency?.[result.result]
+      ?? CONFIG.FFG.PROFICIENCY_RESULTS[result.result];
     return `<img src='${die.image}' title='${game.i18n.localize(die.label)}' alt=''/>`;
   }
 }
