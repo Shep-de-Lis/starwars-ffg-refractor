@@ -57,8 +57,9 @@ export class AbilityDie extends foundry.dice.terms.DiceTerm {
 
   /* -------------------------------------------- */
   /** @override */
-  getResultLabel(result) {
-    const die = CONFIG.FFG.ABILITY_RESULTS[result.result];
+  getResultLabel(result) { 
+    const die = CONFIG.STYLE?.results?.ability?.[result.result]
+      ?? CONFIG.FFG.ABILITY_RESULTS[result.result];
     return `<img src='${die.image}' title='${game.i18n.localize(die.label)}' alt=''/>`;
   }
 }
